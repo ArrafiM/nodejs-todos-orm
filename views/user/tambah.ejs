@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>To-do List App</title>
+	
+</head>
+<body>
+	<ul class="navigasi">
+		<li><a href="/dashboard" >Home</a></li>
+		<li><a href="/dashboard/profile">Profile</a></li>
+		<li><a id="active" >Tambah To-do List</a></li>
+		<li style="float: right;"><a href="/view/logout">Logout</a></li>
+	</ul>
+		<div class="transparant-content">
+		</div>
+		<div id="myHeader">
+			<div class="action">
+				<h1 class=""> To-do List App 
+				<a style="float: right;" id="lt" href="/dashboard"><img class="btn" src="/img/kembali.png"></a>
+			</h1>
+			</div>
+		</div>
+		<div class="todos">
+		<div class="todo">
+		<table>
+					<h3 style="color: black;">Add Activity</h3>
+					<br>
+					<form action="/dashboard/tambah" method="POST" class="todo-header">
+					 <input id="add" type="text" name="title" value="Belajar" >
+				 
+					 <tr>
+						 <br>
+						 <td ><button id="tambah" type="submit">tambah</button></td>
+						</form>
+						 <td><a href="/dashboard"><button id="batal" type="submit">Batal</button></a></td>
+					 </tr>
+					
+					
+		</div>
+	</div>
+</body>
+</html>

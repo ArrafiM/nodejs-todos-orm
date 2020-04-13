@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+</head>
+<body>
+    <ul class="navigasi">
+    <li><a  href="/dashboard" >Home</a> </li>
+        <li><a  href="/dashboard/profile">Profile</a></li>
+        <li><a id="active">Edit Profile</a></li>
+		<li style="float: right;"><a href="/logout">Logout</a></li>
+   
+</ul>
+<div class="transparant-content">
+    </div>
+<div class="transparant-content">
+    </div>
+    <div class="todos" >
+    <h1 class="text-center" >Edit Profile</h1>
+    
+    <table class="tbl_register">
+        <form action="/dashboard/profile/update" method="POST">
+            <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td><%=data[0].email%>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td><a>Alamat email ini adalah alamat email anda, anda tidak dapat merubah alamat email ini </a></td>
+              </tr>
+              
+            <tr>  
+                <td width="150px">Nama Depan </td></br></br>   
+                <td width="30px">=</td>
+                <td><input type="text" name="nama_depan" required placeholder="<%=data[0].nama_depan%>"/></td>
+            </tr> 
+                <tr>  
+                    <td>Nama Belakang </td></br></br>   
+                    <td>=</td>
+                    <td><input type="text" name="nama_belakang" required placeholder="<%=data[0].nama_belakang%>"/></td>
+                </tr>
+                
+                <tr>
+                    <td>Password  </td>
+                    <td>=</td>
+                    <td>
+                        <!-- <input id="input3" type="password" name="password" maxlength="10" required/> -->
+                        <input id="password" name="password" maxlength="10" type="password" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 10 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password"  onfocus="this.value=''" required>                  
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input id="password_two" name="password_two" maxlength="10" type="password"  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Password Tidak Sama' : '');" placeholder="Verify Password"  onfocus="this.value=''" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></br><button id="tambah" type="submit">Edit</button>
+                    &nbsp;                      
+                    </td>
+                </tr>
+        </form>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <!-- <a href="/dashboard/profile">
+                            <button id="tambah" type="submit">Kembali</button>
+                        </a> -->
+                    </td>
+                </tr>
+    </table>
+    
+</div>
+</body>
+</html>

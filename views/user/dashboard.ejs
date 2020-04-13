@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>To-do List App</title>
+	
+</head>
+<body>
+	<ul class="navigasi">
+		<li><a id="active" href="/dashboard" >Home</a></li>
+		<li><a href="/dashboard/profile">Profile</a></li>
+		<li style="float: right;"><a href="/logout">Logout</a></li>
+	</ul>
+	<div class="transparant-content">
+	</div>
+	<div id="myHeader">
+		<div class="action">
+			<h1 class=""> To-do App 
+			
+			<a style="float: right;"id="lh" href="/dashboard/tambah" ><img class="btn" src="/img/tambah.png"></a>	
+			<a style="float: right;" id="lt" href="/dashboard/hapus"><img class="btn" src="/img/hapus.png"></a>
+		</h1>
+		
+	</div>
+	</div>
+	<script type="text/javascript" src="/javascripts/script.js"></script>
+	<div class="todos">
+		<!-- <h1 class="text-center">To-do List App</h1> -->
+		<div class="todo">
+			
+			<% for(var i =0 ; i < data.length; i++) { %>
+				<ul class="list">
+					<li><a><input id="check"type="checkbox"></a></li>
+						<li style="color: black;"><a><%=data[i].title%></a></li>
+						<li style="float: right;">
+							<a href="dashboard/update/<%=data[i].id%>">
+								<img class="btn-kecil" src="/img/edit.png">
+							</a>
+						</li>
+				</ul>
+			<% } %>
+		</div>
+	</div>
+	
+</body>
+</html>

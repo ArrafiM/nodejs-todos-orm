@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <div class="todo-container" >
+    <h1 class="text-center" >Register</h1>
+    <% if (message.length > 0) { %>
+        <div class="alert alert-success col-sm-12"><a style="color: black;"><%= message %></a></div>
+    <% } %>
+    <table class="tbl_register">
+        <div class="login-form">
+        <form action="/register" method="POST">
+            <tr>  
+                <td width="150px">Nama Depan </td></br></br>   
+                <td width="30px">=</td>
+                <td><input id="input3" type="text" name="nama_depan" required/></td>
+            </tr> 
+                <tr>  
+                    <td>Nama Belakang </td></br></br>   
+                    <td>=</td>
+                    <td><input id="input3" type="text" name="nama_belakang" required/></td>
+                </tr>
+                <tr>
+                <td>Email </td></br></br>   
+                <td>=</td>
+                <td><input id="input3" type="email" name="email" required/></td>
+            </tr>
+                <tr>
+                    <td>Password  </td>
+                    <td>=</td>
+                    <td>
+                        <!-- <input id="input3" type="password" name="password" maxlength="10" required/> -->
+                        <input id="password" name="password" maxlength="10" type="password" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 10 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password"  onfocus="this.value=''" required>                  
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input id="password_two" name="password_two" maxlength="10" type="password"  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Password Tidak Sama' : '');" placeholder="Verify Password"  onfocus="this.value=''" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></br><input id="register" type="submit" value="Register">
+                        <!-- <button type="submit">Register</button> -->
+                    &nbsp;                      
+                    </td>
+                </tr>
+        </form>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a id="link" href="/login">Login</a>
+                    </td>
+                </tr>
+            </div>
+    </table>
+    
+</div>
+</body>
+</html>

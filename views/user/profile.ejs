@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>To-do List App</title>
+	
+</head>
+<body>
+  <ul class="navigasi">
+  <li><a  href="/dashboard" >Home</a></li>
+		<li><a id="active" href="/dashboard/profile">Profile</a></li>
+		<li style="float: right;"><a href="/logout">Logout</a></li>
+	</ul>
+	<div class="todo-container">
+		<h1 class="text-center">Profile &nbsp;
+            <!-- <a href="/home">
+				<button id="tambah" type="submit">Kembali</button>
+			</a> -->
+        </h1>
+		
+		<table class="tbl_register" width="300px">
+      <tr>
+        <td>Nama Depan</td>
+        <td>:</td>
+        <td><%=data[0].nama_depan%></td>
+      </tr>
+      <tr>
+        <td>Nama Belakang</td>
+        <td>:</td>
+        <td><%=data[0].nama_belakang%></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>:</td>
+        <td><%=data[0].email%></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><a href="/dashboard/profile/edit"><button id="tambah" type="submit"> Edit </button></a></td>
+      </tr>
+                    
+					
+					<!-- <button id="tambah" type="submit">Edit</button> -->
+					
+		
+	</div>
+</body>
+</html>
+

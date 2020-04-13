@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    
+</head>
+<body>
+    <div class="todo-container">
+        
+        <% if (message.length > 0) { %>
+            <div class="alert alert-danger col-sm-12"><a style="color: red;"><%= message %></a></div>
+<% } %>
+
+    <div class="login-form"> 
+        <h1 >Login</h1> 
+    <form action="/login" method="POST">
+        
+      
+            <center><input id="input3" type="email" name="email" placeholder="Email" required> </center>
+       
+            <center><input id="input3" type="password" name="password" placeholder="Password" maxlength="10" required> </center>
+            
+            <center><input id="input4" type="submit" value="Login"> </center>
+            
+        
+    </form>
+</div> 
+
+<div >
+<a id="a">Jika belum memiliki akun</a>
+<a id="link" href="/register">register disini</a>
+</div>
+    </div>
+</body>
+</html>
