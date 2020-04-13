@@ -16,10 +16,10 @@
 
   },
   "production": {
-    "username": "alex",
-    "password": "123",
-    "database": "todos",
-    "host": "127.0.0.1",
+    "username": "lbvolbgsjeytec",
+    "password": "501498fda1a4811c6c31af0d19e51075126bd61927adb6829f8c0ba0db4f7db1",
+    "database": "d7i4d9vflmvv4e",
+    "host": "ec2-54-152-175-141.compute-1.amazonaws.com",
     "dialect": "postgres"
   }
 }
