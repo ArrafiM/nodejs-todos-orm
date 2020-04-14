@@ -66,7 +66,7 @@ module.exports ={
 	      	.create({
 		        nama_depan: req.body.nama_depan,
 		        nama_belakang: req.body.nama_belakang,
-		        level: req.body.level,
+		        level: "user",
 		        email: req.body.email,
 		        password: hash,
 	      	})
