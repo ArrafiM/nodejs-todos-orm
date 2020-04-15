@@ -14,7 +14,12 @@ module.exports = {
           ['createdAt', 'DESC'],
         ],
       })
-      .then((todos) => res.status(200).send(todos))
+      .then((todos) => {
+        res.status(200).json({
+        message:'Semua Data todos',
+        todos,
+       })
+     })
       .catch((error) => { res.status(400).send(error); });
   },
 
@@ -34,8 +39,14 @@ module.exports = {
           ['createdAt', 'DESC'],
         ],
       })
-      .then(() => res.status(200).send(todo))
+      .then(() => {
+        res.status(200).json({
+        message:'Data todos anda',
+        todo,
+       })
+     })
       .catch((error) => { res.status(400).send(error); });
+       
     })
   },
 
@@ -47,7 +58,7 @@ module.exports = {
         iduser: data.iduser,
       })
       .then((data) => {
-        res.json({
+        res.status(200).json({
           message:'Data Todo Berhasil Disimpan',
           data
         })
@@ -70,7 +81,7 @@ module.exports = {
             iduser: req.body.iduser || todo.iduser,
           })
           .then(() => {
-           res.json({
+           res.status(200).json({
             message:'Data Berhasil Diedit',
             todo,
            })
@@ -92,7 +103,7 @@ module.exports = {
         return todo
           .destroy()
           .then(() => {
-           res.json({
+           res.status(200).json({
             message:'Data Berhasil Dihapus',
            })
          })

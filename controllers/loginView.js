@@ -20,7 +20,7 @@ module.exports ={
         if (!user) {
           message = 'Email Salah.';
           res.render('index.ejs',{message: message});
-        }
+        }else{
         var id = user.id;
         var email = user.email;
         const hash = user.password;
@@ -36,7 +36,8 @@ module.exports ={
               res.render('index.ejs',{message: message});
             }
         	})
-   		.catch((error) => { res.status(400).send(error); });
+		   .catch((error) => { res.status(400).send(error); });
+		}
     })
   }else{
   		if (req.session.loggedin){
