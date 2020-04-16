@@ -31,9 +31,9 @@
 		<div class="todo">
 			<% for(var i =0 ; i < data.length; i++) { %>
 				<ul class="list">
-						<li style="color: black;" width="100%"><%=data[i].title%></li>
+						<li style="color: black;" width="100%"><%=data[i].todos.title%></li>
 						<li style="float: right;">
-							<a href="/dashboard/hapus/<%=data[i].id%>">
+							<a href="/dashboard/hapus/<%=data[i].todos.id%>">
 								<img class="btn-kecil" src="/img/hapus.png">
 							</a>
 						</li>

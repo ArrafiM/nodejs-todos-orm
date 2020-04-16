@@ -21,11 +21,13 @@ module.exports ={
         bcrypt.compare(Password, hash)     
         .then(results =>{
         	if(results === true){          
-            return Todo
-            .findAll({
-              where:{ iduser:id },
-                attributes:['id','title'],
-                include: [],
+            User.findAll({
+              where:{ id:id },
+                  attributes:['todos.id','todos.title'],
+                  include: [{
+                    model: Todo,
+                    as: 'todos'
+                  }],
                   order: [ ['id', 'DESC'] ],
                 })
         		 .then((todos) => {

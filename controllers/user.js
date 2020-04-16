@@ -1,9 +1,30 @@
 var bcrypt = require('bcrypt');
 const saltRounds = 10;
-
+const Todo = require('../models').todo;
 const User = require('../models').user;
 
 module.exports = {
+  model(req,res){
+    var id = req.params.id
+    User.findAll({
+      where:{ id:id },
+      attributes:['todos.id','todos.title'],
+      include: [{
+        model: Todo,
+        as: 'todos'
+      }],
+      order: [
+        ['createdAt', 'DESC'],
+      ],
+    })
+    .then((todos) => {
+      res.status(200).json({
+      message:'Semua Data todos',
+      todos,
+     })
+   })
+    .catch((error) => { res.status(400).send(error); });
+},
   list(req, res) {
     return User
       .findAll({

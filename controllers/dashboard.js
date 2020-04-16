@@ -7,15 +7,19 @@ module.exports = {
 	home(req, res) {
 	var userId= req.session.userId;
 	if(req.session.loggedin){
-    return Todo
+    return User
       .findAll({
-              where:{ iduser:userId },
-                attributes:['id','title'],
-                })
-          .then((todos) => {
-            var results = todos;
-              res.render('user/dashboard.ejs',{data:results});
-            })
+        where:{ id:userId },
+          attributes:['todos.id','todos.title'],
+          include: [{
+            model: Todo,
+            as: 'todos'
+          }],
+        })
+      .then((todos) => {
+        var results = todos;
+          res.render('user/dashboard.ejs',{data:results});
+        })
       .catch((error) => { res.status(400).send(error); });
   	}else{
   		res.redirect('/login');
@@ -74,7 +78,6 @@ module.exports = {
       		.then((todos) => {
               res.render('user/update.ejs',{data:todos});
              })
-  			res.render('user/update.ejs')
   		}
   	}
   },
@@ -82,11 +85,14 @@ module.exports = {
   hapus(req, res){
   	var userId= req.session.userId;
   	if(req.session.loggedin){
-    return Todo
-      .findAll({
-              where:{ iduser:userId },
-                attributes:['id','title'],
-                })
+      User.findAll({
+        where:{ id:userId },
+        attributes:['todos.id','todos.title'],
+        include: [{
+          model: Todo,
+          as: 'todos'
+        }],
+          })
           .then((todos) => {
             var results = todos;
               res.render('user/hapus.ejs',{data:results});

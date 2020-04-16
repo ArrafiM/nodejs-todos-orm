@@ -20,6 +20,7 @@ const {addLoginValidation} = require('../validation/validation');
 router.post('/api/login',addLoginValidation,loginController.Login);
 
 /* User API Router */
+router.get('/api/model/:id',userController.model);
 router.get('/api/user', userController.list);
 router.get('/api/user/:id', userController.getById);
 router.post('/api/user', addUserValidation,userController.add);
@@ -27,6 +28,7 @@ router.put('/api/user/:id', addUserValidation,userController.update);
 router.delete('/api/user/:id', userController.delete);
 
 /* Todo API Router */
+
 router.get('/api/todos', todoController.list);
 router.get('/api/todo/:id', todoController.getById);
 router.post('/api/todos',addTodoValidation,todoController.add);

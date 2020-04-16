@@ -1,11 +1,8 @@
-var bcrypt = require('bcrypt');
-const saltRounds = 10;
-const Joi = require ('joi');
-// const { check, validationResult } = require('express-validator');
 const Todo = require('../models').todo;
 
 
 module.exports = {
+
   list(req, res) {
     return Todo
       .findAll({

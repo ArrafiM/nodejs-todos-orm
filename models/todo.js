@@ -5,7 +5,10 @@ module.exports = (sequelize, DataTypes) => {
     iduser: DataTypes.INTEGER
   }, {});
   todo.associate = function(models) {
-    // associations can be defined here
+    todo.belongsTo(models.user,{
+      foreignKey:'iduser',
+      as: 'user',
+    });
   };
   return todo;
 };
