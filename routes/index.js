@@ -12,9 +12,9 @@ const dashboardViews = require('../controllers').dashboard;
 /* GET home page. */
 
 
-const {addTodoValidation} = require('../validation/todo.validation');
-const {addUserValidation} = require('../validation/user.validation');
-const {addLoginValidation} = require('../validation/login.validation');
+const {addTodoValidation} = require('../validation/validation');
+const {addUserValidation} = require('../validation/validation');
+const {addLoginValidation} = require('../validation/validation');
 
 /* Login API Router */
 router.post('/api/login',addLoginValidation,loginController.Login);

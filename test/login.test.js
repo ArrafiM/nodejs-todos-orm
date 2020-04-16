@@ -12,7 +12,7 @@ describe('Joi Test for Rutes Login',() => {
             .post('/api/login')
             .send(data)
             .then(res => {
-                expect(res.status).toEqual(200);
+                expect(res.status).toEqual(404);
                 expect(res.body.message).toBe("\"email\" is not allowed to be empty")
                 done();
             })
@@ -30,7 +30,7 @@ describe('Joi Test for Rutes Login',() => {
             .post('/api/login')
             .send(data)
             .then(res => {
-                expect(res.status).toEqual(200);
+                expect(res.status).toEqual(404);
                 expect(res.body.message).toBe("\"email\" must be a valid email")
                 done();
             })
@@ -49,7 +49,7 @@ describe('Joi Test for Rutes Login',() => {
             .post('/api/login')
             .send(data)
             .then(res => {
-                expect(res.status).toEqual(200);
+                expect(res.status).toEqual(404);
                 expect(res.body.message).toBe("\"password\" is not allowed to be empty")
                 done();
             })
@@ -68,7 +68,7 @@ describe('Joi Test for Rutes Login',() => {
             .post('/api/login')
             .send(data)
             .then(res => {
-                expect(res.status).toEqual(200);
+                expect(res.status).toEqual(404);
                 expect(res.body.message).toBe("\"password\" length must be at least 3 characters long")
                 done();
             })
@@ -86,7 +86,7 @@ describe('Joi Test for Rutes Login',() => {
             .post('/api/login')
             .send(data)
             .then(res => {
-                expect(res.status).toEqual(200);
+                expect(res.status).toEqual(404);
                 expect(res.body.message).toBe(
                     "\"password\" length must be less than or equal to 8 characters long"
                 )
