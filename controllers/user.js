@@ -12,7 +12,12 @@ module.exports = {
           ['createdAt', 'DESC'],
         ],
       })
-      .then((users) => res.status(200).send(users))
+      .then((users) => {
+        res.status(200).json({
+          message:'Semua Data User',
+          users
+        })
+    })
       .catch((error) => { res.status(400).send(error); });
   },
 
@@ -32,7 +37,12 @@ module.exports = {
           ['createdAt', 'DESC'],
         ],
       })
-      .then(() => res.status(200).send(user))
+      .then(() =>{
+        res.status(200).json({
+          message:'Data Anda',
+          user
+        })
+      })
       .catch((error) => { res.status(400).send(error); });
     })
   },
@@ -49,7 +59,7 @@ module.exports = {
         password: hash,
       })
       .then((data) => {
-        res.json({
+        res.status(200).json({
           message:'Data user Berhasil Disimpan',
           data
         })
@@ -78,7 +88,7 @@ module.exports = {
             password: hash || user.password,
           })
           .then(() => {
-            res.json({
+            res.status(200).json({
               message:'Data Berhasil Diedit',
               user
             })

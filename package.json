@@ -4,7 +4,7 @@
   "description": "Sequalize Postgres Database",
   "main": "app.js",
   "scripts": {
-    "test": "jest ./test/validation.test.js --detectOpenHandles ",
+    "test": "jest ./test/user.test.js --detectOpenHandles ",
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www"
   },

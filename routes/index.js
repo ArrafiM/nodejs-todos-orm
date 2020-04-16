@@ -29,7 +29,7 @@ router.delete('/api/user/:id', userController.delete);
 /* Todo API Router */
 router.get('/api/todos', todoController.list);
 router.get('/api/todo/:id', todoController.getById);
-router.post('/api/todos', addTodoValidation,todoController.add);
+router.post('/api/todos',addTodoValidation,todoController.add);
 router.put('/api/todo/:id', addTodoValidation,todoController.update);
 router.delete('/api/todo/:id', todoController.delete);
 

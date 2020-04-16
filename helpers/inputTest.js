@@ -66,5 +66,14 @@ module.exports = {
             password:'123456789'
         };
     },
+    add: () => {
+        return {
+            nama_depan: firstName,
+            nama_belakang: lastName,
+            level:'user',
+            email:email,
+            password:'123'
+        };
+    },
 
 };

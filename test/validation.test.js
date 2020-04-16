@@ -50,9 +50,9 @@ describe('Joi Test for Rutes Todos',() => {
             .catch(err => {
                 console.log(`Error ${err}`)
                 done(); 
-            })
-        })
-    } )
+            });
+        });
+    });
 });
 describe('Joi Test for Rutes User',() => {
     describe('Test joi for the routes Api User',() => {
