@@ -31,15 +31,10 @@ module.exports ={
                   order: [ ['id', 'DESC'] ],
                 })
                 
-        		 .then((result) => {
+        		 .then((Todo) => {
                
-               for(var i =0 ; i < result.length;i++) {
-                if(result[i].todos == null){
-                  res.json({ message:'Berhasil Login',id,email })
-                }else{
-                  res.json({ message:'Berhasil Login',id,email,result })
-                }
-               }  
+                res.json({ message:'Berhasil Login',Todo })
+
              })
         		}else{
               res.json({ message:'Password Salah',})
