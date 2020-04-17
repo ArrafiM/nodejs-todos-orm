@@ -30,8 +30,14 @@ module.exports ={
                   }],
                   order: [ ['id', 'DESC'] ],
                 })
-        		 .then((todos) => {
-              res.json({ message:'Berhasil Login',id,email,todos })
+                
+        		 .then((result) => {
+                if(result.length == null){
+                  res.json({ message:'Berhasil Login',id,email })
+                }else{
+                  res.json({ message:'Berhasil Login',id,email,result })
+                }
+                
              })
         		}else{
               res.json({ message:'Password Salah',})

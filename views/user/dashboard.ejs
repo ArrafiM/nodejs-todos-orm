@@ -30,18 +30,24 @@
 	<div class="todos">
 		<!-- <h1 class="text-center">To-do List App</h1> -->
 		<div class="todo">
-			
-			<% for(var i =0 ; i < data.length; i++) { %>
+			 <% if(data.length == 1){ %>
 				<ul class="list">
-					<li><a><input id="check"type="checkbox"></a></li>
-						<li style="color: black;"><a><%=data[i].todos.title%></a></li>
-						<li style="float: right;">
-							<a href="dashboard/update/<%=data[i].todos.id%>">
-								<img class="btn-kecil" src="/img/edit.png">
-							</a>
-						</li>
+						
 				</ul>
-			<% } %>
+			 <% } else { %>
+					<% for(var i =0 ; i < data.length; i++) { %>
+						<ul class="list">
+							<li><a><input id="check"type="checkbox"></a></li>
+								<li style="color: black;"><a><%=data[i].todos.title%></a></li>
+								<li style="float: right;">
+									<a href="dashboard/update/<%=data[i].todos.id%>">
+										<img class="btn-kecil" src="/img/edit.png">
+									</a>
+								</li>
+						</ul>
+					<% } %>
+			 <%} %>
+			
 		</div>
 	</div>
 	

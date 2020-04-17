@@ -16,9 +16,9 @@ module.exports = {
             as: 'todos'
           }],
         })
-      .then((todos) => {
-        var results = todos;
-          res.render('user/dashboard.ejs',{data:results});
+        .then((todos) => {
+            res.render('user/dashboard.ejs',{data:todos}); 
+             
         })
       .catch((error) => { res.status(400).send(error); });
   	}else{
@@ -173,6 +173,30 @@ module.exports = {
   			res.redirect('/login');
   		}
   		
+  	}
+  },
+
+  addTodos(req, res){
+  	if(req.method == "POST"){
+  	var data = req.body;
+  	var userId= req.session.userId;
+      return Todo
+      .create({
+        title: data.title,
+        iduser: userId,
+      })
+      .then((data) => {
+        res.redirect('/dashboard');
+      })
+      .catch((error) => res.status(400).send(error));
+  	}else{
+	  	var message = '';
+	   	if (req.session.loggedin) {
+	   
+	      res.render('user/tambah.ejs',{message: message});	
+	 	} else {			
+	      res.redirect('/login');
+	 	}
   	}
   },
 
