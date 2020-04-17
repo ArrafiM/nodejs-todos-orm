@@ -4,8 +4,6 @@ var router = express.Router();
 const todoController = require('../controllers').todo;
 const userController = require('../controllers').user;
 const loginController = require('../controllers').login;
-// const projectController = require('../controllers').project;
-// const projectdepartmentController = require('../controllers').projectdepartment;
 const loginViews = require('../controllers').loginView;
 const dashboardViews = require('../controllers').dashboard;
 
@@ -62,8 +60,6 @@ router.get('/dashboard/profile',dashboardViews.profile);
 router.get('/dashboard/profile/edit',dashboardViews.editProfile);
 router.post('/dashboard/profile/update',dashboardViews.editProfile);
 
-/* Data Profile dan Edit */
-router.get('/tambah/todos',dashboardViews.addTodos);
 
 // router.get('/', function(req, res, next) {
 //   res.render('index', { title: 'Express' });
