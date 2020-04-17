@@ -32,12 +32,14 @@ module.exports ={
                 })
                 
         		 .then((result) => {
-                if(result.length == 1){
+               
+               for(var i =0 ; i < result.length;i++) {
+                if(result[i].todos == null){
                   res.json({ message:'Berhasil Login',id,email })
                 }else{
                   res.json({ message:'Berhasil Login',id,email,result })
                 }
-                
+               }  
              })
         		}else{
               res.json({ message:'Password Salah',})
