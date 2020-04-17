@@ -32,7 +32,7 @@ module.exports ={
                 })
                 
         		 .then((result) => {
-                if(result.length == null){
+                if(result.length == 1){
                   res.json({ message:'Berhasil Login',id,email })
                 }else{
                   res.json({ message:'Berhasil Login',id,email,result })
